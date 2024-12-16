@@ -1,0 +1,12 @@
+name = "SpontaneousCorticalFlows"
+uuid = "2b68d36a-307c-4069-81be-075547e16903"
+authors = ["Eric Neiva <eric.miranda-neiva@college-de-france.fr>"]
+version = "0.1.0"
+
+[deps]
+Gridap = "56d4f2e9-7ea1-5844-9cf6-b9c51ca7ce8e"
+Random = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
+
+[compat]
+Gridap = "0.18.8"
+Random = "1.11.0"
