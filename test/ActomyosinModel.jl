@@ -45,9 +45,9 @@ function run(L,n,order,Pe,Δt,t₀,T,τᵈkₒ)
   eₕ = interpolate_everywhere(_eₕ,Uᵐ)
 
   function viscous_flow_problem(Pe,eₕ)
-    β = 0.0001
+    β = 0.00001
     dξ(e) = 4*e / ( e*e + 1 )^2
-    aᵘ(u,v) = ∫( ∇(u)⊙∇(v) + β * ( u⋅v ) )dΩ
+    aᵘ(u,v) = ∫( 2.0 * ( ∇(u)⊙∇(v) ) + β * ( u⋅v ) )dΩ
     bᵘ(v) = ∫( Pe * ( dξ∘(eₕ) ) * ( ∇(eₕ) ⋅ v ) )dΩ
     aᵘ,bᵘ
   end
@@ -89,14 +89,14 @@ function run(L,n,order,Pe,Δt,t₀,T,τᵈkₒ)
 
 end
 
-Pe = 1.0
-Δt = 0.001
+Pe = 100.0
+Δt = 0.01
 t₀ = 0.0
 T = 1.0
 τᵈkₒ = 1.0
 
 L = 1
-n = 10
+n = 20
 order = 1
 
 run(L,n,order,Pe,Δt,t₀,T,τᵈkₒ)

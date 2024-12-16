@@ -46,7 +46,7 @@ function run(L,n,order,Pe,Δt,t₀,T,τᵈkₒ)
 
   function viscous_flow_problem(Pe,eₕ)
     β = 0.0001
-    aᵘ(u,v) = ∫( eₕ * ( ∇(u)⊙∇(v) ) + β * ( u⋅v ) )dΩ
+    aᵘ(u,v) = ∫( 2.0 * eₕ * ( ∇(u)⊙∇(v) ) + β * ( u⋅v ) )dΩ
     bᵘ(v) = ∫( Pe * ( ∇(eₕ) ⋅ v ) )dΩ
     aᵘ,bᵘ
   end
